@@ -8,39 +8,103 @@ gsap.registerPlugin(ScrollTrigger);
 
 const photos = [
   {
+    id: 0,
+    name: 'Photo 1',
+    photo: foto,
+    rowStart: '5',
+    rowEnd: '7',
+    colStart: '5',
+    colEnd: '8'
+  },
+  {
     id: 1,
     name: 'Photo 1',
-    photo: foto
+    photo: foto,
+    rowStart: '1',
+    rowEnd: '6',
+    colStart: '1',
+    colEnd: '5'
   },
   {
     id: 2,
     name: 'Photo 2',
-    photo: foto
+    photo: foto,
+    rowStart: '1',
+    rowEnd: '5',
+    colStart: '5',
+    colEnd: '8'
   },
   {
     id: 3,
     name: 'Photo 3',
-    photo: foto
+    photo: foto,
+    rowStart: '1',
+    rowEnd: '6',
+    colStart: '8',
+    colEnd: '10'
   },
   {
     id: 4,
     name: 'Photo 4',
-    photo: foto
+    photo: foto,
+    rowStart: '1',
+    rowEnd: '6',
+    colStart: '10',
+    colEnd: '12'
   },
   {
     id: 5,
     name: 'Photo 5',
-    photo: foto
+    photo: foto,
+    rowStart: '6',
+    rowEnd: '12',
+    colStart: '1',
+    colEnd: '5'
   },
   {
     id: 6,
     name: 'Photo 6',
-    photo: foto
+    photo: foto,
+    rowStart: '7',
+    rowEnd: '9',
+    colStart: '5',
+    colEnd: '8'
   },
   {
     id: 7,
     name: 'Photo 7',
-    photo: foto
+    photo: foto,
+    rowStart: '6',
+    rowEnd: '12',
+    colStart: '8',
+    colEnd: '12'
+  },
+  {
+    id: 8,
+    name: 'Photo 8',
+    photo: foto,
+    rowStart: '9',
+    rowEnd: '12',
+    colStart: '5',
+    colEnd: '6'
+  },
+  {
+    id: 9,
+    name: 'Photo 9',
+    photo: foto,
+    rowStart: '9',
+    rowEnd: '12',
+    colStart: '6',
+    colEnd: '7'
+  },
+  {
+    id: 10,
+    name: 'Photo 10',
+    photo: foto,
+    rowStart: '9',
+    rowEnd: '12',
+    colStart: '7',
+    colEnd: '8'
   }
 ]
 
@@ -98,46 +162,24 @@ const Gallery = () => {
   return (
     <div ref={galleryRef} className="gallery hw-full z-[1] border-red">
       <div ref={mainImageRef} className="main-image fixed border-blue w-full top-0 left-0 scale-[0.19] mt-[-35px]">
-      {/*<div ref={mainImageRef} className="main-image fixed border-blue w-full top-0 left-0">*/}
-        <img src={foto} alt=""/>
+        {/*<div ref={mainImageRef} className="main-image fixed border-blue w-full top-0 left-0">*/}
+        {/*  <img src={foto} alt=""/>*/}
       </div>
       
       <div className="container h-[100vh] mx-auto border-2 border-red-900">
         <div className="grid grid-rows-9 grid-cols-11 gap-4 h-full w-full m-0 p-0">
-          <div className="row-start-5 row-end-7 col-start-5 col-end-8 rounded-2xl bg-amber-500">
-            {/*  IMG  */}
-          </div>
-          <div className="row-start-1 row-end-6 col-start-1 col-end-5 rounded-2xl bg-green-300">
-            {/*  IMG  */}
-          </div>
-          <div className="row-start-1 row-end-5 col-start-5 col-end-8 rounded-2xl bg-purple-300">
-            {/*  IMG  */}
-          </div>
-          <div className="row-start-1 row-end-6 col-start-8 col-end-10 rounded-2xl bg-blue-300">
-            {/*  IMG  */}
-          </div>
-          <div className="row-start-1 row-end-6 col-start-10 col-end-12 rounded-2xl bg-neutral-400">
-            {/*  IMG  */}
-          </div>
-          <div className="row-start-6 row-end-12 col-start-1 col-end-5 rounded-2xl bg-blue-500">
-            {/*  IMG  */}
-          </div>
-          <div className="row-start-7 row-end-9 col-start-5 col-end-8 rounded-2xl bg-green-200">
-            {/*  IMG  */}
-          </div>
-          <div className="row-start-6 row-end-12 col-start-8 col-end-12 rounded-2xl bg-yellow-200">
-            {/*  IMG  */}
-          </div>
-          <div className="row-start-9 row-end-12 col-start-5 col-end-6 rounded-2xl bg-pink-300">
-            {/*  IMG  */}
-          </div>
-          <div className="row-start-9 row-end-12 col-start-6 col-end-7 rounded-2xl bg-yellow-100">
-            {/*  IMG  */}
-          </div>
-          <div className="row-start-9 row-end-12 col-start-7 col-end-8 rounded-2xl bg-purple-200">
-            {/*  IMG  */}
-          </div>
+          {
+            photos.map((photo, index) => {
+              const {id, rowStart, rowEnd, colStart, colEnd} = photo;
+              return <div key={index + id.toString()}
+                          className={`row-start-${rowStart} row-end-${rowEnd} col-start-${colStart} col-end-${colEnd} rounded-2xl`}>
+                {/*  IMG  */}
+                <img src={photo.photo} alt="" className="object-fill hw-full"/>
+              </div>
+            })
+          }
         </div>
+      
       </div>
     
     
