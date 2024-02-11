@@ -1,21 +1,22 @@
-import React, {useRef, useState} from 'react';
+import React, {Fragment, useRef} from 'react';
 import gsap from "gsap";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
 import foto from "../sources/castel-sanangelo-1.jpg";
 import {useGSAP} from "@gsap/react";
+import Mosaic from "./Mosaic";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const photos = [
-  {
-    id: 0,
-    name: 'Photo 1',
-    photo: foto,
-    rowStart: '5',
-    rowEnd: '7',
-    colStart: '5',
-    colEnd: '8'
-  },
+  // {
+  //   id: 0,
+  //   name: 'Photo 1',
+  //   photo: foto,
+  //   rowStart: '5',
+  //   rowEnd: '7',
+  //   colStart: '5',
+  //   colEnd: '8'
+  // },
   {
     id: 1,
     name: 'Photo 1',
@@ -112,79 +113,91 @@ const Gallery = () => {
   
   const galleryRef = useRef();
   const mainImageRef = useRef();
+  const mainImageRowColRef = useRef();
+  const mainImageContainerRef = useRef();
+  const mosaicRef = useRef();
   
-  const [end, setEnd] = useState(false);
-  
-  useGSAP(() => {
+  const getMinWidth = (viewportWidth) => {
+    console.log(viewportWidth)
+    const breakpoints = [640, 768, 1024, 1280, 1536]; // Tailwind default values
+    let minWidth = breakpoints[0];
     
-    console.log(window.innerHeight)
+    for (const breakpoint of breakpoints) {
+      if (viewportWidth >= breakpoint) {
+        minWidth = breakpoint;
+      } else {
+        break;
+      }
+    }
     
-    // gsap.to(mainImageRef.current, {
-    //   scrollTrigger: {
-    //     trigger: mainImageRef.current,
-    //     start: "200px top",
-    //     // end: () => "+=" + document.querySelector(".main-image").offsetWidth,
-    //     end: "bottom top",
-    //     scrub: true,
-    //     onEnter: ({progress, direction, isActive}) => {
-    //       console.log(progress, direction, isActive);
-    //       setEnd(false);
-    //     },
-    //     onEnterBack: ({progress, direction, isActive}) => {
-    //       console.log(progress, direction, isActive);
-    //       setEnd(false);
-    //     },
-    //     onLeave: ({progress, direction, isActive}) => {
-    //       console.log(progress, direction, isActive);
-    //       setEnd(true);
-    //     },
-    //     markers: {
-    //       startColor: "green", endColor: "red", fontSize: "16px", fontWeight: "normal", indent: 0,
-    //     },
-    //   },
-    //   // width: "500px",
-    //   // top: "50%",
-    //   // left: "50%",
-    //   // xPercent: -50,
-    //   // yPercent: -50,
-    //   scale: 0.2,
-    //   marginTop: "-35px"
-    // })
+    console.log("width: ", minWidth)
     
-  }, {scope: galleryRef}) // <-- scope for selector text (optional)
+    return minWidth;
+  }
   
   useGSAP(() => {
-    gsap.set(mainImageRef.current, {
-      opacity: end ? 0 : 1
-    })
-  }, [end]);
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: galleryRef.current,
+        start: "top top",
+        end: "center bottom",
+        scrub: 1,
+        pin: true,
+        markers: true
+      }
+    });
+    tl.add('reducing-container')
+    tl.to(mainImageContainerRef.current, {
+      marginLeft: (window.innerWidth - getMinWidth(window.innerWidth)) / 2,
+      marginRight: (window.innerWidth - getMinWidth(window.innerWidth)) / 2,
+    }, 'reducing-container')
+    tl.to(mainImageRef.current, {
+      scaleX: 0.265,
+      scaleY: 0.21,
+      borderRadius: "1rem"
+    }, 'reducing-container')
+    tl.to(mainImageRef.current, {
+      translateY: 45
+    }, 'reducing-container')
+    tl.to(mosaicRef.current, {
+      opacity: 1
+    }, 'reducing-container')
+    // tl.pause()
+    tl.add('reducing')
+    tl.to(mainImageContainerRef.current, {
+      css: {className: "container mx-auto h-full border-2 relative"},
+    }, 'reducing')
+    tl.set(mainImageRowColRef.current, {
+      css: {className: "grid grid-rows-9 grid-cols-11 gap-4 h-[100vh] relative z-10"}
+    }, 'reducing')
+    tl.set(mainImageRef.current, {
+      css: {className: "row-start-5 row-end-7 col-start-5 col-end-8 noscale bg-red-500"},
+    }, 'reducing')
+    
+  }, {scope: galleryRef});
+  
   
   return (
-    <div ref={galleryRef} className="gallery hw-full z-[1] border-red">
-      <div ref={mainImageRef} className="main-image fixed border-blue w-full top-0 left-0 scale-[0.19] mt-[-35px]">
-        {/*<div ref={mainImageRef} className="main-image fixed border-blue w-full top-0 left-0">*/}
-        {/*  <img src={foto} alt=""/>*/}
-      </div>
-      
-      <div className="container h-[100vh] mx-auto border-2 border-red-900">
-        <div className="grid grid-rows-9 grid-cols-11 gap-4 h-full w-full m-0 p-0">
-          {
-            photos.map((photo, index) => {
-              const {id, rowStart, rowEnd, colStart, colEnd} = photo;
-              return <div key={index + id.toString()}
-                          className={`row-start-${rowStart} row-end-${rowEnd} col-start-${colStart} col-end-${colEnd} rounded-2xl`}>
-                {/*  IMG  */}
-                <img src={photo.photo} alt="" className="object-fill hw-full"/>
-              </div>
-            })
-          }
+    <Fragment>
+      <div ref={galleryRef} className="gallery h-full relative">
+        <div ref={mainImageContainerRef} className="h-[100vh]">
+          <div ref={mainImageRowColRef} className="h-[100vh] relative z-10">
+            <div ref={mainImageRef} className="bg-red-500 h-[100vh]">
+              {/*<span>PHOTO !!!</span>*/}
+              <img src={foto} alt=""/>
+            </div>
+          </div>
+          
+          <Mosaic mosaicRef={mosaicRef} foto={foto}/>
+        
         </div>
-      
       </div>
-    
-    
-    </div>
-  );
+      {/*<div className="h-[100vh] w-60 bg-amber-500">*/}
+      
+      {/*</div>*/}
+    </Fragment>
+  )
+    ;
 };
 
 export default Gallery;
