@@ -1,19 +1,21 @@
-import React, {useRef} from "react";
+import React from "react";
+import {NextUIProvider} from "@nextui-org/react";
 import './styles/App.css';
-import gsap from "gsap";
-import {useGSAP} from "@gsap/react"; // <-- import GSAP
-import {ScrollTrigger} from "gsap/ScrollTrigger";
-import foto from "./sources/castel-sanangelo-1.jpg";
 import Gallery from "./components/Gallery";
-
-gsap.registerPlugin(ScrollTrigger);
+import Hero from "./components/Hero";
 
 function App() {
-  
   return (
-    <div className="App">
-      <Gallery />
-    </div>
+    <NextUIProvider>
+      <div className="App">
+        <div className="relative">
+          <Hero />
+        </div>
+        {/*<div className="relative">*/}
+          <Gallery/>
+        {/*</div>*/}
+      </div>
+    </NextUIProvider>
   );
 }
 
