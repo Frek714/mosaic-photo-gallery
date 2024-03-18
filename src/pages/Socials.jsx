@@ -1,42 +1,48 @@
-import React, { Fragment } from "react";
+import React, {Fragment} from "react";
 import bannerImage from "../sources/background/wave-haikei-edit-2.png";
+import Card from "../components/Card";
 
 const Socials = () => {
   const socials = [
     {
-      social: "Instagram",
-      link: "/",
+      title: "Instagram",
+      text: "/",
+      image: "123"
     },
     {
-      social: "Instagram",
-      link: "/",
+      title: "Instagram",
+      text: "/",
+      image: "456"
     },
     {
-      social: "Instagram",
-      link: "/",
+      title: "Instagram",
+      text: "/",
+      image: "789"
     },
   ];
 
   return (
     <Fragment>
-      <div className="w-full relative z-[1]">
+      <div className="w-full relative z-[3]">
         {/* <WaveShape /> */}
-        <img src={bannerImage} alt="" className="rounded" />
+        <img src={bannerImage} alt="" className="rounded"/>
       </div>
 
-      <div className="w-full container mx-auto px-10 md:px-14">
+      <div className="w-full container mx-auto px-10 md:px-14 mt-28">
         <div className="flex justify-center">
           <h2 className="text-white text-4xl md:text-5xl lg:text-6xl">
             Folow Me on:
           </h2>
         </div>
 
-        <div className="h-full md:flex md:justify-center md:content-center">
-          {socials.map((social) => (
-            <div className="border-red">
-              <h3>{social.social}</h3>
-              <p>test</p>
-            </div>
+        <div className="grid grid-cols-2 sm:grid-cols-6 grid-rows-1 gap-20 mt-20 mb-40">
+          {socials.map((social, index) => (
+            <Card
+              key={index}
+              image={social.image}
+              title={social.title}
+              text={social.text}
+            />
           ))}
         </div>
       </div>

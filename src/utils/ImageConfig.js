@@ -1,155 +1,19 @@
-import aurora from "../sources/compressed/aurora su strada-min.png";
-import cervo from "../sources/compressed/cervo-edited-min.png";
-import cervoHarem from "../sources/compressed/cervo-harem-1-min.jpg";
-import viaLattea from "../sources/compressed/via-lattea-min.png";
-import cascata from "../sources/compressed/cascata-camosciara-2-min.jpg"
-import daino from "../sources/compressed/daino-2-min.jpg"
-import farfallaFrutta from "../sources/compressed/farfalla-gialla-frutta-min.jpg"
-import farfallaFoglia from "../sources/compressed/farfalla-sotto-foglia-min.jpg"
-import luna from "../sources/compressed/luna-piena-3-min.jpg";
-import montagna from "../sources/compressed/montagna-noir-min.jpg";
-import ruscello from "../sources/compressed/ruscello-camosciara-1-min.jpg";
-
-// export const photos = [
-//     {
-//       id: 'zero',
-//       name: 'Photo 1',
-//       photo: aurora,
-//       style: {
-//         rowStart: '5',
-//         rowEnd: '7',
-//         colStart: '5',
-//         colEnd: '9'
-//       },
-//       bg: 'bg-green-300'
-//     },
-//     {
-//       id: 'uno',
-//       name: 'Photo 1',
-//       photo: cervoHarem,
-//       style: {
-//         rowStart: '1',
-//         rowEnd: '6',
-//         colStart: '1',
-//         colEnd: '5'
-//       },
-//       bg: 'bg-green-300'
-//     },
-//     {
-//       id: 'due',
-//       name: 'Photo 2',
-//       photo: montagna,
-//       style: {
-//         rowStart: '1',
-//         rowEnd: '5',
-//         colStart: '5',
-//         colEnd: '9'
-//       },
-//       bg: 'bg-purple-300'
-//     },
-//     {
-//       id: 'tre',
-//       name: 'Photo 3',
-//       photo: cervo,
-//       style: {
-//         rowStart: '1',
-//         rowEnd: '6',
-//         colStart: '9',
-//         colEnd: '11'
-//       },
-//       bg: 'bg-blue-300'
-//     },
-//     {
-//       id: 'quattro',
-//       name: 'Photo 4',
-//       photo: viaLattea,
-//       style: {
-//         rowStart: '1',
-//         rowEnd: '6',
-//         colStart: '11',
-//         colEnd: '13'
-//       },
-//       bg: 'bg-neutral-400'
-//     },
-//     {
-//       id: 'cinque',
-//       name: 'Photo 5',
-//       photo: ruscello,
-//       style: {
-//         rowStart: '6',
-//         rowEnd: '10',
-//         colStart: '1',
-//         colEnd: '5'
-//       },
-//       bg: 'bg-blue-500'
-//     },
-//     {
-//       id: 'sei',
-//       name: 'Photo 6',
-//       photo: farfallaFoglia,
-//       style: {
-//         rowStart: '7',
-//         rowEnd: '9',
-//         colStart: '5',
-//         colEnd: '7'
-//       },
-//       bg: 'bg-green-200'
-//     },
-//     {
-//       id: 'sette',
-//       name: 'Photo 7',
-//       photo: daino,
-//       style: {
-//         rowStart: '6',
-//         rowEnd: '10',
-//         colStart: '9',
-//         colEnd: '13'
-//       },
-//       bg: 'bg-yellow-200'
-//     },
-//     {
-//       id: 'otto',
-//       name: 'Photo 8',
-//       photo: farfallaFrutta,
-//       style: {
-//         rowStart: '9',
-//         rowEnd: '10',
-//         colStart: '5',
-//         colEnd: '6'
-//       },
-//       bg: 'bg-pink-300'
-//     },
-//     {
-//       id: 'nove',
-//       name: 'Photo 9',
-//       photo: luna,
-//       style: {
-//         rowStart: '9',
-//         rowEnd: '10',
-//         colStart: '6',
-//         colEnd: '7'
-//       },
-//       bg: 'bg-yellow-100'
-//     },
-//     {
-//       id: 'dieci',
-//       name: 'Photo 10',
-//       photo: cascata,
-//       style: {
-//         rowStart: '7',
-//         rowEnd: '10',
-//         colStart: '7',
-//         colEnd: '9'
-//       },
-//       bg: 'bg-purple-200'
-//     }
-//   ]
+import website01 from "../sources/photos/compressed/website-01.jpg";
+import website02 from "../sources/photos/compressed/website-02.jpg";
+import website03 from "../sources/photos/compressed/website-03.jpg";
+import website04 from "../sources/photos/compressed/website-04.jpg";
+import website05 from "../sources/photos/compressed/website-05.jpg";
+import website06 from "../sources/photos/compressed/website-06.jpg";
+import website07 from "../sources/photos/compressed/website-07.jpg";
+import website08 from "../sources/photos/compressed/website-08.jpg";
+import website09 from "../sources/photos/compressed/website-09.jpg";
+import website00 from "../sources/photos/forca-dacero.jpg";
 
 export const photos2 = [
   {
     id: 'zero2',
     name: 'Photo 1',
-    photo: aurora,
+    photo: website01,
     style: {
       rowStart: '5',
       rowEnd: '7',
@@ -161,7 +25,7 @@ export const photos2 = [
   {
     id: 'uno2',
     name: 'Photo 1',
-    photo: cervoHarem,
+    photo: website02,
     style: {
       rowStart: '1',
       rowEnd: '4',
@@ -173,7 +37,7 @@ export const photos2 = [
   {
     id: 'due2',
     name: 'Photo 2',
-    photo: montagna,
+    photo: website03,
     style: {
       rowStart: '1',
       rowEnd: '5',
@@ -185,7 +49,7 @@ export const photos2 = [
   {
     id: 'tre2',
     name: 'Photo 3',
-    photo: cervo,
+    photo: website04,
     style: {
       rowStart: '1',
       rowEnd: '4',
@@ -197,7 +61,7 @@ export const photos2 = [
   {
     id: 'quattro2',
     name: 'Photo 4',
-    photo: viaLattea,
+    photo: website05,
     style: {
       rowStart: '4',
       rowEnd: '6',
@@ -209,7 +73,7 @@ export const photos2 = [
   {
     id: 'cinque2',
     name: 'Photo 5',
-    photo: ruscello,
+    photo: website06,
     style: {
       rowStart: '4',
       rowEnd: '6',
@@ -221,7 +85,7 @@ export const photos2 = [
   {
     id: 'sei2',
     name: 'Photo 6',
-    photo: farfallaFoglia,
+    photo: website07,
     style: {
       rowStart: '6',
       rowEnd: '13',
@@ -233,7 +97,7 @@ export const photos2 = [
   {
     id: 'otto2',
     name: 'Photo 7',
-    photo: daino,
+    photo: website08,
     style: {
       rowStart: '7',
       rowEnd: '13',
@@ -245,7 +109,7 @@ export const photos2 = [
   {
     id: 'sette2',
     name: 'Photo 8',
-    photo: farfallaFrutta,
+    photo: website09,
     style: {
       rowStart: '6',
       rowEnd: '13',
@@ -261,7 +125,7 @@ export const photos2 = [
     {
       id: 'zero',
       name: 'Photo 1',
-      photo: aurora,
+      photo: website00,
       style: {
         rowStart: '5',
         rowEnd: '7',
@@ -272,8 +136,8 @@ export const photos2 = [
     },
     {
       id: 'uno',
-      name: 'Photo 1',
-      photo: cervoHarem,
+      name: 'Photo 2',
+      photo: website02,
       style: {
         rowStart: '1',
         rowEnd: '4',
@@ -284,8 +148,8 @@ export const photos2 = [
     },
     {
       id: 'due',
-      name: 'Photo 2',
-      photo: montagna,
+      name: 'Photo 3',
+      photo: website03,
       style: {
         rowStart: '1',
         rowEnd: '5',
@@ -296,8 +160,8 @@ export const photos2 = [
     },
     {
       id: 'tre',
-      name: 'Photo 3',
-      photo: cervo,
+      name: 'Photo 4',
+      photo: website04,
       style: {
         rowStart: '1',
         rowEnd: '4',
@@ -308,8 +172,8 @@ export const photos2 = [
     },
     {
       id: 'quattro',
-      name: 'Photo 4',
-      photo: viaLattea,
+      name: 'Photo 5',
+      photo: website05,
       style: {
         rowStart: '4',
         rowEnd: '6',
@@ -320,8 +184,8 @@ export const photos2 = [
     },
     {
       id: 'cinque',
-      name: 'Photo 5',
-      photo: ruscello,
+      name: 'Photo 6',
+      photo: website06,
       style: {
         rowStart: '4',
         rowEnd: '6',
@@ -332,8 +196,8 @@ export const photos2 = [
     },
     {
       id: 'sei',
-      name: 'Photo 6',
-      photo: farfallaFoglia,
+      name: 'Photo 7',
+      photo: website07,
       style: {
         rowStart: '6',
         rowEnd: '13',
@@ -344,8 +208,8 @@ export const photos2 = [
     },
     {
       id: 'otto',
-      name: 'Photo 7',
-      photo: daino,
+      name: 'Photo 8',
+      photo: website08,
       style: {
         rowStart: '7',
         rowEnd: '13',
@@ -356,8 +220,8 @@ export const photos2 = [
     },
     {
       id: 'sette',
-      name: 'Photo 8',
-      photo: farfallaFrutta,
+      name: 'Photo 9',
+      photo: website09,
       style: {
         rowStart: '6',
         rowEnd: '13',

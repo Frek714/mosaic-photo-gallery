@@ -122,16 +122,16 @@ const Portfolio = () => {
   const [openModalPhoto, setOpenModalPhoto] = useState(false);
   const [imageFullScreen, setImageFullScreen] = useState(null);
 
-  const refs = useRef([]);
+  const galleryContainerRef = useRef(null);
 
   const handleShowFullScreenImage = (image) => {
     setImageFullScreen(image || "0");
     setOpenModalPhoto(true);
   };
 
-  // useGSAP(() => {
+  useGSAP(() => {
 
-  // },{scope: galleryContainerRef})
+  },{scope: galleryContainerRef})
 
   return (
     <Fragment>

@@ -7,7 +7,7 @@ import Home from "./pages/Home";
 import Portfolio from "./pages/Portfolio";
 import WhoIam from "./pages/WhoIam";
 import Page4 from "./pages/Socials";
-import Page5 from "./pages/Page5";
+import Buy from "./pages/Buy";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Socials from "./pages/Socials";
@@ -43,7 +43,7 @@ function App() {
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/who-i-am" element={<WhoIam />} />
           <Route path="/socials" element={<Socials />} />
-          <Route path="/buy" element={<Page5 />} />
+          <Route path="/buy" element={<Buy />} />
         </Routes>
 
         <Footer />

@@ -15,18 +15,18 @@ const Mosaic = ({ photos, isAbsolute, k }) => {
               key={photoObj.id + index}
               className={`${photoObj.id} row-start-${rowStart} row-end-${rowEnd} col-start-${colStart} col-end-${colEnd} shadow-xl`}
             >
-              {/* <img
+              <img
                 src={photoObj.photo}
                 alt=""
-                className="rounded"
-                loading="lazy"
-              /> */}
-              <img
-                src={"https://picsum.photos/id/" + (Math.random() * 200).toFixed(0) + "/800/1000"}
-                alt=""
-                className="rounded"
+                className=""
                 loading="lazy"
               />
+              {/*<img*/}
+              {/*  src={"https://picsum.photos/id/" + (Math.random() * 200).toFixed(0) + "/800/1000"}*/}
+              {/*  alt=""*/}
+              {/*  className="rounded"*/}
+              {/*  loading="lazy"*/}
+              {/*/>*/}
             </div>
           );
         })}

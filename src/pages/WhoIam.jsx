@@ -54,7 +54,6 @@ const WhoIam = () => {
             </span>
           </div>
         </div>
-        ì
       </div>
 
       <div className="my-40 mb-10 text-center text-white flex flex-col justify-center content-center items-center">

@@ -11,28 +11,13 @@ import { redirect, useLocation } from "react-router-dom";
 gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
-  const galleryRef = useRef();
-  // const mainImageRef = useRef();
-  // const mainImageRowColRef = useRef();
   const mainImageContainerRef = useRef();
   const secondImageContainerRef = useRef();
-  const secondImageRef = useRef();
-  // const mosaicRef = useRef();
-
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     ScrollTrigger.refresh();
-  //     console.log("scrolltrigger refresh!");
-  //   }, 100);
-  // }, [])
-
-  // const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     setTimeout(() => {
       ScrollTrigger.refresh();
       console.log("scrolltrigger refresh!");
-      // loading && setLoading(false);
     }, 100);
 
     window.scrollTo(0, 0);
@@ -46,7 +31,6 @@ const Home = () => {
           start: "top +=800",
           end: "top center",
           scrub: 2,
-          // pin: true,
           // markers: true,
         },
       });
@@ -55,7 +39,6 @@ const Home = () => {
         ".zero",
         {
           opacity: 0,
-          // delay: 0.1,
         },
         "fade-zero"
       );
@@ -175,7 +158,6 @@ const Home = () => {
           start: "top bottom",
           end: "bottom bottom",
           scrub: 1,
-          // pin: secondImageContainerRef.current,
           // markers: true,
         },
       });
@@ -211,10 +193,6 @@ const Home = () => {
     },
     { scope: secondImageContainerRef }
   );
-
-  // if (loading) {
-  //   return <span class="material-symbols-outlined">progress_activity</span>;
-  // }
 
   return (
     <Fragment>
